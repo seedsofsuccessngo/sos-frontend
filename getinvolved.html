@@ -49,7 +49,7 @@
       font-weight: 700; font-size: 22px; color: #0d6e4f;
     }
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 50%;
+      width: 52px; height: 52px;
       background: linear-gradient(135deg, #0d6e4f, #f5a623);
       display: flex; align-items: center; justify-content: center;
       color: #fff; font-size: 20px; font-weight: 700;
@@ -202,6 +202,201 @@
     .role-card p {
       color: #5a6b66;
       font-size: 15px;
+    }
+
+    .role-toggle {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0d6e4f;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.role-toggle:hover {
+    color: #f5a623;
+}
+
+.role-toggle.close {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.role-toggle.close:hover {
+    color: #b71c1c;
+}
+
+    .role-close {
+      display: none;
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      color: #0d6e4f;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 17px;
+      line-height: 1;
+      z-index: 2;
+    }
+
+    /* View Roles button styling (inside each role card) */
+    .role-toggle {
+      display: inline-block;
+      margin-top: 15px;
+      color: #0d6e4f;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border-radius: 999px;
+      border: 1px solid #0d6e4f;
+      padding: 10px 18px;
+      background: #ffffff;
+      font-size: 15px;
+    }
+
+    .role-toggle:hover {
+      color: #0a5239;
+      border-color: #0a5239;
+      transform: translateY(-2px);
+    }
+
+    .role-toggle.close {
+      border-color: #d32f2f;
+      color: #d32f2f;
+      background: #fff8eb;
+    }
+
+    .role-toggle.close:hover {
+      border-color: #b71c1c;
+      color: #b71c1c;
+    }
+
+
+    .role-details {
+      display: none;
+      text-align: left;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid #e8efec;
+      animation: roleDetailsIn 0.22s ease both;
+    }
+    .role-details h4 {
+      font-family: 'Playfair Display', serif;
+      color: #0d6e4f;
+      font-size: 20px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .role-details h5 {
+      font-family: 'Playfair Display', serif;
+      color: #0d6e4f;
+      font-size: 16px;
+      margin: 16px 0 8px;
+    }
+    .role-details .detail-intro {
+      color: #3e4d49;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .role-details ul {
+      margin-left: 18px;
+      color: #3e4d49;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .role-details .time-commitment {
+      margin-top: 16px;
+      color: #1f2d2a;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.7;
+      background: #fff8eb;
+      border-left: 4px solid #f5a623;
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    .role-card.is-active .role-details{
+    display:block;
+}
+
+.role-card.is-active .role-toggle{
+    font-size:22px;
+    font-weight:bold;
+    color:#d32f2f;
+}
+
+.role-card.is-active .role-toggle:hover{
+    color:#b71c1c;
+}
+
+    @keyframes roleDetailsIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* 6b. Role description panel */
+    .role-description-panel {
+      max-width: 900px;
+      margin: 28px auto 0;
+      background: #ffffff;
+      border: 1px solid #e8efec;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(13, 110, 79, 0.08);
+      overflow: hidden;
+    }
+    .role-description-header {
+      padding: 22px 22px 12px;
+      background: linear-gradient(135deg, rgba(13,110,79,0.10), rgba(245,166,35,0.10));
+      border-bottom: 1px solid #e8efec;
+    }
+    .role-description-header h3 {
+      font-family: 'Playfair Display', serif;
+      color: #0d6e4f;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    .role-description-header p {
+      color: #5a6b66;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+    .role-description-body {
+      padding: 18px 22px 24px;
+      animation: rolePanelIn 0.22s ease both;
+    }
+    .role-description-body h4 {
+      font-family: 'Playfair Display', serif;
+      color: #0d6e4f;
+      font-size: 16px;
+      margin: 16px 0 8px;
+    }
+    .role-description-body ul {
+      margin-left: 18px;
+      color: #3e4d49;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .role-description-body .time-commitment {
+      margin-top: 14px;
+      color: #1f2d2a;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    @keyframes rolePanelIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .role-card.is-active {
+      border-color: #0d6e4f;
+      box-shadow: 0 14px 32px rgba(13,110,79,0.18);
     }
 
     /* 7a. Donation section */
@@ -467,40 +662,141 @@
 
       <div class="roles-grid">
 
-        <div class="role-card">
+        <div class="role-card" data-role="tutor">
+          <button type="button" class="role-close" aria-label="Close role details" title="Close">✕</button>
           <div class="role-icon">📚</div>
           <h3>Become a Tutor</h3>
           <p>Teach a child English 1-on-1 through fun, structured online sessions and become their guide for life.</p>
+          <button type="button" class="role-toggle">View Roles</button>
+
+          <div class="role-details">
+            <h4>Your Role as a Tutor</h4>
+            <p class="detail-intro">Tutors are the heart and backbone of this program.</p>
+
+            <h5>Prerequisites</h5>
+            <ul>
+              <li>Must be fluent in Tamil.</li>
+              <li>Passionate about helping kids learn and grow.</li>
+              <li>Ready to commit time and energy to making a difference.</li>
+            </ul>
+
+            <h5>Responsibilities</h5>
+            <ul>
+              <li>Conduct engaging English lessons based on our standardized curriculum for your student.</li>
+              <li>Use Tamil strategically to explain concepts and build rapport.</li>
+              <li>Encourage student participation and curiosity.</li>
+              <li>Ask for help when needed from the adult coordinator, especially for student tutors.</li>
+              <li>Adapt and refine teaching methodology to benefit students.</li>
+              <li>Go prepared. Before class, review the lesson content.</li>
+              <li>Keep track of time, flow, and lessons taught.</li>
+              <li>If this role interests you, there will be a follow-up orientation session to attend.</li>
+            </ul>
+
+            <p class="time-commitment">Time Commitment: Minimum of 1 to 1.5 hours per week, including tutoring, preparation for class, and any homework help offered. Any extra time offered is beneficial for the student.</p>
+          </div>
         </div>
 
-        <div class="role-card">
+        <div class="role-card" data-role="coordinator">
+          <button type="button" class="role-close" aria-label="Close role details" title="Close">✕</button>
           <div class="role-icon alt">🤝</div>
           <h3>Mentor / Coordinator</h3>
           <p>Help match tutors with students, schedule sessions, and ensure smooth communication on both sides.</p>
+          <button type="button" class="role-toggle">View Roles</button>
+
+          <div class="role-details">
+            <h4>Your Role as a Coordinator</h4>
+            <p class="detail-intro">Adult coordinators help student tutors run their sessions smoothly.</p>
+
+            <h5>Prerequisites</h5>
+            <ul>
+              <li>Proficient in reading, writing, and speaking Tamil.</li>
+              <li>Familiar with Tamil culture and able to understand local customs and context so lessons stay respectful and relatable.</li>
+            </ul>
+
+            <h5>Responsibilities</h5>
+            <ul>
+              <li>Be present in all tutoring sessions with student tutors.</li>
+              <li>Troubleshoot technology and curriculum challenges during sessions.</li>
+              <li>Help smooth communication when needed with students, parents, and school staff.</li>
+              <li>Help tutors adapt when challenges arise.</li>
+              <li>Encourage and reassure students.</li>
+              <li>Provide emotional and logistical support to both tutor and student.</li>
+              <li>If this role interests you, there will be a follow-up orientation session to attend.</li>
+            </ul>
+
+            <p class="time-commitment">Time Commitment: Minimum of 1 hour per week per student. This can be split across multiple sessions.</p>
+          </div>
         </div>
 
-        <div class="role-card">
+        <div class="role-card" data-role="curriculum">
+          <button type="button" class="role-close" aria-label="Close role details" title="Close">✕</button>
           <div class="role-icon">📖</div>
           <h3>Curriculum Developer</h3>
           <p>Design lessons, worksheets and activities that make English engaging, practical and culturally relevant.</p>
+          <button type="button" class="role-toggle">View Roles</button>
+
+          <div class="role-details">
+            <h4>Your Role as a Curriculum Developer</h4>
+            <p class="detail-intro">Our curriculum has three parts: Basic Grammar, Cultural Exchange, and Practical Skill Building. If you can help with any or all of these, your contribution is welcome.</p>
+
+            <h5>Responsibilities</h5>
+            <ul>
+              <li>Design tailored training materials and lesson plans based on skill level.</li>
+              <li>Incorporate cultural exchange moments in each session.</li>
+              <li>Share real-life examples and role-play situations to teach practical language use.</li>
+              <li>Match activities to the student’s English proficiency level.</li>
+              <li>Create bilingual English-Tamil teaching aids when needed.</li>
+              <li>Work with tutors to adapt lesson flow for cultural and practical relevance.</li>
+              <li>Update materials based on feedback from students, tutors, and adult coordinators.</li>
+            </ul>
+
+            <p class="time-commitment">Time Commitment: Variable and flexible based on what you can offer.</p>
+          </div>
         </div>
 
-        <div class="role-card">
+        <div class="role-card" data-role="technology">
+          <button type="button" class="role-close" aria-label="Close role details" title="Close">✕</button>
           <div class="role-icon alt">💻</div>
           <h3>Technology Implementor</h3>
           <p>Help build and maintain the tools that power our tutoring platform, website and student tracking systems.</p>
+          <button type="button" class="role-toggle">View Roles</button>
+
+          <div class="role-details">
+            <h4>Your Role as a Technology Implementor</h4>
+
+            <h5>Responsibilities</h5>
+            <ul>
+              <li>Assist in building and improving the website.</li>
+              <li>Create and maintain the YouTube channel and reels.</li>
+              <li>Support homework innovation by creating mobile-friendly assignments.</li>
+              <li>Help use AI and other emerging technologies to simplify lesson delivery and create engaging practice tools.</li>
+            </ul>
+
+            <p class="time-commitment">Time Commitment: Variable and flexible based on what you can offer.</p>
+          </div>
         </div>
 
-        <div class="role-card">
+        <div class="role-card" data-role="helper">
+          <button type="button" class="role-close" aria-label="Close role details" title="Close">✕</button>
           <div class="role-icon">✨</div>
           <h3>Behind-the-Scene Helper</h3>
-          <p>Support outreach, content creation, social media, fundraising, or anywhere else your skills can shine.</p>
-        </div>
+          <p>Support outreach, homework, scheduling, organization, and other behind-the-scenes program needs.</p>
+          <button type="button" class="role-toggle">View Roles</button>
 
-        <div class="role-card">
-          <div class="role-icon alt">❤️</div>
-          <h3>Well-Wisher / Supporter</h3>
-          <p>Spread the word, donate resources, or simply cheer us on. Every act of support helps a child grow.</p>
+          <div class="role-details">
+            <h4>Be Part of Our Well-Oiled Machine Crew</h4>
+            <p class="detail-intro">Behind-the-scene helpers support important program operations.</p>
+
+            <h5>Helpers may assist as</h5>
+            <ul>
+              <li>Story book readers</li>
+              <li>Homework helpers</li>
+              <li>Scheduling helpers who coordinate schedules with students and tutors</li>
+              <li>Google Drive organizers and maintainers</li>
+            </ul>
+
+            <p class="time-commitment">Time Commitment: Variable and flexible based on what you can offer.</p>
+          </div>
         </div>
 
       </div>
@@ -584,6 +880,56 @@
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('show');
     });
+
+    // Expand/collapse role details inside each role card
+    const roleCards = document.querySelectorAll(".role-card");
+
+function closeAllRoles() {
+    roleCards.forEach(card => {
+        card.classList.remove("is-active");
+
+        const btn = card.querySelector(".role-toggle");
+            btn.innerHTML = "View Roles";
+        btn.classList.remove("close");
+    });
+}
+
+roleCards.forEach(card => {
+
+    const btn = card.querySelector(".role-toggle");
+
+    btn.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        const opened = card.classList.contains("is-active");
+
+        closeAllRoles();
+
+        if(!opened){
+
+            card.classList.add("is-active");
+
+            btn.innerHTML="✕";
+            btn.classList.add("close");
+
+        }
+
+    });
+
+});
+
+document.addEventListener("click",function(e){
+
+    if(!e.target.closest(".role-card")){
+
+        closeAllRoles();
+
+    }
+
+});
+
+      
 
     // Static-only donation flow
     let selectedAmount = 500;

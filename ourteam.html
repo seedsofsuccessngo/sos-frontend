@@ -49,7 +49,7 @@
       font-weight: 700; font-size: 22px; color: #0d6e4f;
     }
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 50%;
+      width: 52px; height: 52px;
       background: linear-gradient(135deg, #0d6e4f, #f5a623);
       display: flex; align-items: center; justify-content: center;
       color: #fff; font-size: 20px; font-weight: 700;
@@ -137,7 +137,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
-    .team-card {
+    .team-card { position: relative;
       background: #ffffff;
       border-radius: 18px;
       padding: 36px 26px;
@@ -194,6 +194,27 @@
       border-radius: 14px;
       margin: 6px 0 10px;
     }
+    /* Close (✕) styling for expanded member cards */
+    .member-close {
+      color: #0d6e4f;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .team-card .member-details {
+      position: relative;
+      padding-top: 34px;
+    }
+
+    /*  */
+
+    /* keep location styles below */
     .location {
       color: #5a6b66;
       font-size: 14px;
@@ -341,26 +362,62 @@
 
       <div class="team-grid">
 
-        <div class="team-card">
+        <div class="team-card" data-member="mithra">
           <div class="avatar"><img src="Images/Mithra_Pic.avif" alt="Mithra Venkatesan"></div>
           <h3>Mithra Venkatesan</h3>
           <span class="role">Founder & Program Coordinator & Tutor</span>
           <p class="location">Aldie, VA, USA</p>
+          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+
+          <div class="member-details" style="display:none;">
+            <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
+            <p style="margin-top: 12px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Mithra is a junior at South Lakes High School in Herndon, Virginia. She is a gymnast, cheerleader, tennis player, and aspires to pursue a career in medicine. Mithra had the unique privilege of studying for a few years in Tamil Nadu during her formative years, so she is naturally well-versed in the Tamil language and culture.
+            </p>
+            <p style="margin-top: 10px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Witnessing firsthand the economic and educational doors that English fluency opened for her peers, especially in rural areas, instilled in her a deep understanding of the need for bilingualism and a sense of responsibility to the underprivileged by starting Seeds of Success.
+            </p>
+          </div>
         </div>
 
-        <div class="team-card">
+        <div class="team-card" data-member="nila">
           <div class="avatar alt-1"><img src="Images/Nila_pic.avif" alt="Nila Loganathan"></div>
           <h3>Nila Loganathan</h3>
           <span class="role">Founder & Program Coordinator & Tutor</span>
           <p class="location">Aldie, VA, USA</p>
+          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+
+          <div class="member-details" style="display:none;">
+            <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
+            <p style="margin-top: 12px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Nila is a rising sophomore at Freedom High School in Chantilly, Virginia. She is a dedicated gymnast and is notably fluent in Tamil, possessing strong skills in speaking, reading, and writing the language. Nila particularly excels at public speaking in both Tamil and English, a skill she uses to connect with and motivate students.
+            </p>
+            <p style="margin-top: 10px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              The opportunity to work with and assist underprivileged students is what motivated her to co-start Seeds of Success. Nila recognizes the program's meaningful cause and is confident her involvement will positively impact the kids while maximizing the program's reach.
+            </p>
+          </div>
         </div>
 
-        <div class="team-card">
+
+        <div class="team-card" data-member="kavin">
           <div class="avatar alt-2"><img src="Images/Kavin_Pic.avif" alt="Kavin Loganathan"></div>
           <h3>Kavin Loganathan</h3>
           <span class="role">Founder & Technology Innovator</span>
           <p class="location">Aldie, VA, USA</p>
+          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+
+          <div class="member-details" style="display:none;">
+            <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
+            <p style="margin-top: 12px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Kavin is an eighth-grader at J. Michael Lunsford Middle School in Chantilly, Virginia. He is a well-versed debater, an enthusiastic public speaker, and an athlete who plays lacrosse and volleyball. As an avid technologist who enjoys solving complex problems, Kavin has taken on the vital role of providing technological support for Seeds of Success.
+            </p>
+            <p style="margin-top: 10px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              His responsibilities include building and maintaining the organization's digital solutions. Furthermore, he plays a key part in digitalizing the curriculum and ensuring the technical framework is in place to help the organization scale its operations and reach.
+            </p>
+          </div>
         </div>
+
+
 
       </div>
     </div>
@@ -390,12 +447,24 @@
           <p class="location">Erode, Tamil Nadu, India</p>
         </div>
 
-        <div class="team-card">
+        <div class="team-card" data-member="thara">
           <div class="avatar"><img src="Images/Thara_Pic.avif" alt="Thara Venkatesan"></div>
           <h3>Thara Venkatesan</h3>
           <span class="role">Tutor</span>
           <p class="location">Aldie, VA, USA</p>
+          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+
+          <div class="member-details" style="display:none;">
+            <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
+            <p style="margin-top: 12px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Thara is a second-year student at the College of William & Mary in Williamsburg, Virginia. She serves as the key mentor to Seeds of Success founders. Drawing on her own leadership experience, she provides guidance and strategic support to the emerging organization.
+            </p>
+            <p style="margin-top: 10px; font-size: 14px; line-height: 1.7; color: #3e4d49; max-width: 340px; margin-left: auto; margin-right: auto;">
+              Having attended Tamil school for 12 years, she is fluent in the language and proficient in speaking, reading, and writing. With a passion for teaching children and a goal to teach English abroad, she is excited to give back to her community of origin and help guide the next generation of program leaders.
+            </p>
+          </div>
         </div>
+
 
       </div>
     </div>
@@ -497,6 +566,47 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('show');
+    });
+
+    // Expand/collapse member descriptions (single-open at a time)
+    const memberCards = document.querySelectorAll('.team-card[data-member]');
+
+    function closeAllMembers() {
+      memberCards.forEach(card => {
+        card.classList.remove('member-open');
+        const details = card.querySelector('.member-details');
+        if (details) details.style.display = 'none';
+      });
+    }
+
+    memberCards.forEach(card => {
+      const toggleBtn = card.querySelector('.member-toggle');
+      const closeBtn = card.querySelector('.member-close');
+      const details = card.querySelector('.member-details');
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (!details) return;
+
+          const isOpen = details.style.display !== 'none';
+          closeAllMembers();
+          if (!isOpen) details.style.display = 'block';
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeAllMembers();
+        });
+      }
+    });
+
+    // Click outside closes
+    document.addEventListener('click', (e) => {
+      const inside = e.target && e.target.closest && e.target.closest('.team-card[data-member]');
+      if (!inside) closeAllMembers();
     });
 
     // Smooth page transitions for internal links
