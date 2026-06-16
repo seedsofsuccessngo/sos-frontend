@@ -1,0 +1,173 @@
+/* ============================================================
+   Seeds of Success — volunteer-dashboard.css
+   Page-specific styles only. Shared styles are in common.css.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+       Seeds of Success — Volunteer Dashboard (static preview)
+       --------------------------------------------------------- */
+
+    /* Header */
+
+    /* Welcome */
+    .welcome-strip {
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      padding: 50px 0 60px;
+    }
+    .welcome-strip h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 8px;
+    }
+    .welcome-strip p { font-size: 16px; opacity: 0.92; }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -40px;
+      position: relative; z-index: 2;
+    }
+    .stat-tile {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 6px 20px rgba(13,110,79,0.08);
+      border: 1px solid #e8efec;
+    }
+    .stat-tile .num { font-family: "Playfair Display", serif; font-size: 30px; color: #0d6e4f; font-weight: 700; }
+    .stat-tile .lbl { color: #5a6b66; font-size: 13px; margin-top: 4px; }
+
+    /* Sections */
+
+    .card {
+      background: #fff; border-radius: 14px; padding: 28px;
+      border: 1px solid #e8efec;
+      box-shadow: 0 4px 14px rgba(13,110,79,0.05);
+    }
+    .card-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .card-head h2 { font-family: "Playfair Display", serif; font-size: 22px; color: #0d6e4f; }
+    .card-head small { color: #5a6b66; font-size: 13px; }
+
+    /* Tasks */
+    .task-list { list-style: none; }
+    .task-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eef3f0;
+    }
+    .task-list li:last-child { border-bottom: none; }
+    .task-checkbox {
+      width: 22px; height: 22px;
+      border-radius: 6px;
+      border: 2px solid #c4d3cc;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s ease;
+    }
+    .task-checkbox.done {
+      background: #0d6e4f;
+      border-color: #0d6e4f;
+      color: #fff;
+    }
+    .task-info { flex: 1; }
+    .task-info h4 { font-size: 15px; font-weight: 600; color: #1f2d2a; }
+    .task-info.done h4 { text-decoration: line-through; color: #9aa9a3; }
+    .task-info p { font-size: 13px; color: #5a6b66; }
+    .due {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .due.urgent { background: #fdecea; color: #b3261e; }
+    .due.soon   { background: #fff3dc; color: #a06b00; }
+    .due.later  { background: #e6f4ee; color: #0d6e4f; }
+
+    /* Profile / role card */
+    .profile-card { text-align: center; }
+    .avatar-big {
+      width: 84px; height: 84px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; font-weight: 700;
+      font-family: "Playfair Display", serif;
+    }
+    .profile-card h3 { font-family: "Playfair Display", serif; font-size: 22px; color: #0d6e4f; }
+    .profile-card .role-pill {
+      display: inline-block;
+      margin-top: 6px;
+      background: #fff3dc;
+      color: #a06b00;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .info-rows { margin-top: 18px; text-align: left; }
+    .info-rows .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #eef3f0;
+    }
+    .info-rows .row:last-child { border-bottom: none; }
+    .info-rows .row span:first-child { color: #5a6b66; }
+    .info-rows .row span:last-child { color: #1f2d2a; font-weight: 500; }
+
+    /* Hours table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #eef3f0; }
+    th { font-weight: 600; color: #5a6b66; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Announcements */
+    .announce {
+      background: linear-gradient(135deg, #fff8eb, #fff);
+      border-left: 4px solid #f5a623;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .announce h4 { font-size: 15px; color: #0d6e4f; margin-bottom: 4px; }
+    .announce p { font-size: 13px; color: #5a6b66; }
+    .announce time { font-size: 12px; color: #9aa9a3; display: block; margin-top: 4px; }
+
+    /* Footer */
+
+    @media (max-width: 960px) {
+      
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      
+    }
+
+    /* Mobile responsiveness fix — no horizontal scroll, fits viewport */
+    
+    img, table { max-width: 100%; }
+    @media (max-width: 600px) {
+      
+      .card { padding: 22px 18px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      th, td { padding: 10px 6px; font-size: 13px; }
+      .stat-tile { padding: 18px 14px; }
+      .stat-tile .num { font-size: 26px; }
+      .card-head { flex-wrap: wrap; gap: 6px; }
+      .welcome-strip { padding: 40px 0 50px; }
+      .stats-row { gap: 12px; }
+      .task-list li { flex-wrap: wrap; }
+      .due { margin-left: 36px; }
+    }
+
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pageFadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }

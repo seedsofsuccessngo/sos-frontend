@@ -1,0 +1,146 @@
+/* ============================================================
+   Seeds of Success — ourteam.css
+   Page-specific styles only. Shared styles are in common.css.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+       Seeds of Success — Our Team Page
+       --------------------------------------------------------- */
+
+    /* 1. Reset & base */
+
+    /* 2. Header & nav */
+
+    /* 3. Hamburger */
+
+    /* 4. Page hero */
+
+    /* 5. Section title (reused) */
+
+    /* 6. Team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .team-card { position: relative;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 36px 26px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(13,110,79,0.08);
+      border: 1px solid #e8efec;
+      transition: all 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(13,110,79,0.18);
+    }
+    .avatar {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center; justify-content: center;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(13,110,79,0.25);
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    /* Different colors for variety */
+    .avatar.alt-1 { background: linear-gradient(135deg, #f5a623, #f7b945); color: #1f2d2a; }
+    .avatar.alt-2 { background: linear-gradient(135deg, #14906a, #1fb585); }
+    .avatar.alt-3 { background: linear-gradient(135deg, #102a23, #0d6e4f); }
+    .avatar.alt-4 { background: linear-gradient(135deg, #d97706, #f5a623); }
+
+    .team-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      color: #0d6e4f;
+      margin-bottom: 4px;
+    }
+    .role {
+      display: inline-block;
+      background: #f5f9f7;
+      color: #0d6e4f;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin: 6px 0 10px;
+    }
+    /* Close (✕) styling for expanded member cards */
+    .member-close {
+      color: #0d6e4f;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .team-card .member-details {
+      position: relative;
+      padding-top: 34px;
+    }
+
+    /*  */
+
+    /* keep location styles below */
+    .location {
+      color: #5a6b66;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* 7. CTA band */
+    .cta-band {
+      background: linear-gradient(135deg, #f5a623, #f7b945);
+      color: #1f2d2a;
+      padding: 70px 0;
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(26px, 3.5vw, 36px);
+      margin-bottom: 14px;
+    }
+    .cta-band p { margin-bottom: 28px; font-size: 17px; }
+
+    /* 8. Footer */
+
+    /* 9. Responsive */
+    @media (max-width: 960px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      
+    }
+    @media (max-width: 768px) {
+
+      .team-grid { grid-template-columns: 1fr; }
+      
+    }
+
+    /* 10. Page transitions */
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pageFadeOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-6px); }
+    }

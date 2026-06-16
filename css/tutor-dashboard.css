@@ -1,0 +1,239 @@
+/* ============================================================
+   Seeds of Success — tutor-dashboard.css
+   Page-specific styles only. Shared styles are in common.css.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+       Seeds of Success — Tutor Dashboard (static preview)
+       --------------------------------------------------------- */
+
+    /* Header */
+
+    /* Welcome strip */
+    .welcome-strip {
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      padding: 50px 0 60px;
+    }
+    .welcome-strip h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 8px;
+    }
+    .welcome-strip p { opacity: 0.9; font-size: 16px; }
+
+    /* Stat tiles */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -40px;
+      position: relative;
+      z-index: 2;
+    }
+    .stat-tile {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 6px 20px rgba(13,110,79,0.08);
+      border: 1px solid #e8efec;
+    }
+    .stat-tile .num {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      color: #0d6e4f;
+      font-weight: 700;
+    }
+    .stat-tile .lbl { color: #5a6b66; font-size: 13px; margin-top: 4px; }
+
+    /* Sections */
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid #e8efec;
+      box-shadow: 0 4px 14px rgba(13,110,79,0.05);
+    }
+
+    /* Two-column layout */
+
+    /* Student list */
+    .student-list { list-style: none; }
+    .student-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid #eef3f0;
+    }
+    .student-list li:last-child { border-bottom: none; }
+    .student-info { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .avatar.alt { background: linear-gradient(135deg, #f5a623, #f7b945); color: #1f2d2a; }
+    .student-info h4 { font-size: 15px; color: #1f2d2a; font-weight: 600; }
+    .student-info p { font-size: 13px; color: #5a6b66; }
+    .pill {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      background: #e6f4ee;
+      color: #0d6e4f;
+    }
+    .pill.alt { background: #fff3dc; color: #a06b00; }
+
+    /* Form */
+
+    /* Sessions table */
+    table {
+
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid #eef3f0;
+    }
+    th {
+      font-weight: 600;
+      color: #5a6b66;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .progress-bar {
+      width: 70px; height: 6px;
+      background: #e8efec;
+      border-radius: 3px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #0d6e4f, #14906a);
+      border-radius: 3px;
+    }
+    .topic-dropdown {
+      border: 1px solid #e8efec;
+      border-radius: 10px;
+      background: #fff;
+      padding: 8px 10px;
+    }
+    .topic-dropdown summary {
+      cursor: pointer;
+      color: #0d6e4f;
+      font-weight: 600;
+      list-style-position: inside;
+    }
+    .topic-checks {
+      margin-top: 8px;
+      color: #5a6b66;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .topic-checks input { margin-right: 6px; accent-color: #0d6e4f; }
+    .student-link {
+      color: #0d6e4f;
+      font-weight: 600;
+      border-bottom: 1px dotted rgba(13,110,79,0.45);
+    }
+    .progress-card {
+      display: block;
+      color: inherit;
+      cursor: pointer;
+    }
+    .progress-card:hover strong { color: #0d6e4f; }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(16,42,35,0.48);
+      z-index: 200;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      width: min(560px, 100%);
+      max-height: 86vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e8efec;
+      box-shadow: 0 18px 45px rgba(16,42,35,0.22);
+      padding: 26px;
+    }
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .modal-head h3 {
+      font-family: "Playfair Display", serif;
+      color: #0d6e4f;
+      font-size: 24px;
+    }
+    .modal-close {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #d8e2dd;
+      background: #fff;
+      color: #1f2d2a;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .detail-list {
+      margin: 8px 0 16px 18px;
+      color: #5a6b66;
+      font-size: 14px;
+    }
+    .detail-list li { margin-bottom: 6px; }
+
+    /* Footer */
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      
+    }
+    @media (max-width: 768px) {
+
+      table { font-size: 13px; }
+    }
+
+    /* Mobile responsiveness fix — no horizontal scroll, fits viewport */
+    
+    img, table { max-width: 100%; }
+    @media (max-width: 600px) {
+      
+      .card { padding: 22px 18px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      th, td { padding: 10px 6px; font-size: 13px; }
+      .stat-tile { padding: 18px 14px; }
+      .stat-tile .num { font-size: 26px; }
+      .card-head, .section-title { flex-wrap: wrap; gap: 6px; }
+      .welcome-strip { padding: 40px 0 50px; }
+      .stats-row { gap: 12px; }
+    }
+
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pageFadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }

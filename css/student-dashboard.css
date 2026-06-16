@@ -1,0 +1,356 @@
+/* ============================================================
+   Seeds of Success — student-dashboard.css
+   Page-specific styles only. Shared styles are in common.css.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+       Seeds of Success — Student Dashboard (static preview)
+       --------------------------------------------------------- */
+
+    /* Header */
+
+    /* Welcome */
+    .welcome-strip {
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      padding: 50px 0 60px;
+    }
+    .welcome-strip h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 8px;
+    }
+    .welcome-strip p { font-size: 16px; opacity: 0.92; }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -40px;
+      position: relative; z-index: 2;
+    }
+    .stat-tile {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 6px 20px rgba(13,110,79,0.08);
+      border: 1px solid #e8efec;
+    }
+    .stat-tile .num { font-family: "Playfair Display", serif; font-size: 30px; color: #0d6e4f; font-weight: 700; }
+    .stat-tile .lbl { color: #5a6b66; font-size: 13px; margin-top: 4px; }
+
+    .card {
+      background: #fff; border-radius: 14px; padding: 28px;
+      border: 1px solid #e8efec;
+      box-shadow: 0 4px 14px rgba(13,110,79,0.05);
+    }
+    .card-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .card-head h2 { font-family: "Playfair Display", serif; font-size: 22px; color: #0d6e4f; }
+    .card-head small { color: #5a6b66; font-size: 13px; }
+
+    /* Tutor card */
+    .tutor-card { text-align: center; }
+    .avatar-big {
+      width: 90px; height: 90px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; font-weight: 700;
+      font-family: "Playfair Display", serif;
+    }
+    .tutor-card h3 { font-family: "Playfair Display", serif; font-size: 22px; color: #0d6e4f; }
+    .tutor-card .country {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 4px;
+      font-size: 13px; color: #5a6b66;
+    }
+    .tutor-actions {
+      display: flex; gap: 10px; justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .info-rows { margin-top: 18px; text-align: left; }
+    .info-rows .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #eef3f0;
+    }
+    .info-rows .row:last-child { border-bottom: none; }
+    .info-rows .row span:first-child { color: #5a6b66; }
+    .info-rows .row span:last-child { color: #1f2d2a; font-weight: 500; }
+
+    /* Upcoming session */
+    .next-session {
+      background: linear-gradient(135deg, #fff8eb, #ffffff);
+      border: 1px solid #f4e4c1;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .next-session .date-block {
+      width: 70px;
+      flex-shrink: 0;
+      text-align: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .next-session .date-block .day {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: #0d6e4f;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .next-session .date-block .month {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #a06b00;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .next-session .info h4 { font-size: 16px; font-weight: 600; }
+    .next-session .info p { font-size: 13px; color: #5a6b66; }
+    .next-session .info .time {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 12px;
+      padding: 3px 10px;
+      background: #e6f4ee;
+      color: #0d6e4f;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* Sessions table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #eef3f0; vertical-align: middle; }
+    th { font-weight: 600; color: #5a6b66; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stars { color: #f5a623; letter-spacing: 1px; font-size: 14px; }
+
+    /* Lessons grid (kid-friendly) */
+    .lessons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .lesson-card {
+      background: linear-gradient(135deg, #fff8eb, #ffffff);
+      border: 2px solid #f4e4c1;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .lesson-card:hover { transform: translateY(-4px) rotate(-1deg); border-color: #f5a623; box-shadow: 0 10px 22px rgba(245,166,35,0.18); }
+    .lesson-card .emoji { font-size: 42px; display:block; margin-bottom: 8px; }
+    .lesson-card h4 { font-size: 16px; color: #0d6e4f; font-family: "Playfair Display", serif; margin-bottom: 4px; }
+    .lesson-card p { font-size: 12px; color: #5a6b66; }
+    .lesson-card .badge {
+      display: inline-block; margin-top: 8px;
+      background: #0d6e4f; color: #fff;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .lesson-card.locked { opacity: 0.6; }
+    .lesson-card.locked .badge { background: #9aa9a3; }
+
+    /* Videos */
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .video-card {
+      background: #fff;
+      border: 1px solid #e8efec;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(13,110,79,0.12); }
+    .video-thumb {
+      height: 110px;
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 40px;
+      position: relative;
+    }
+    .video-thumb.alt { background: linear-gradient(135deg, #f5a623, #f7b945); color: #1f2d2a; }
+    .video-thumb.purple { background: linear-gradient(135deg, #7b5cd6, #a787e8); }
+    .video-thumb .play-icon {
+      position: absolute;
+      bottom: 8px; right: 8px;
+      background: rgba(255,255,255,0.95);
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size: 14px; color: #0d6e4f;
+    }
+    .video-info { padding: 12px 14px; }
+    .video-info h4 { font-size: 14px; font-weight: 600; }
+    .video-info p { font-size: 12px; color: #5a6b66; margin-top: 2px; }
+
+    /* Homework */
+    .homework-list { list-style: none; }
+    .homework-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f5f9f7;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+    }
+    .homework-list li:hover { background: #e6f4ee; }
+    .hw-checkbox {
+      width: 24px; height: 24px;
+      border-radius: 6px;
+      border: 2px solid #c4d3cc;
+      flex-shrink: 0;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: transparent;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .hw-checkbox.done { background: #0d6e4f; border-color: #0d6e4f; color: #fff; }
+    .hw-info { flex: 1; }
+    .hw-info h4 { font-size: 15px; font-weight: 600; }
+    .hw-info.done h4 { text-decoration: line-through; color: #9aa9a3; }
+    .hw-info p { font-size: 13px; color: #5a6b66; }
+    .hw-due {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .hw-due.urgent { background: #fdecea; color: #b3261e; }
+    .hw-due.soon   { background: #fff3dc; color: #a06b00; }
+    .hw-due.done   { background: #e6f4ee; color: #0d6e4f; }
+
+    /* Quiz */
+    .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .quiz-card {
+      border-radius: 16px;
+      padding: 24px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-card.daily   { background: linear-gradient(135deg, #0d6e4f, #14906a); }
+    .quiz-card.weekly  { background: linear-gradient(135deg, #f5a623, #f7b945); color: #1f2d2a; }
+    .quiz-card h3 { font-family: "Playfair Display", serif; font-size: 22px; margin-bottom: 6px; }
+    .quiz-card p  { font-size: 14px; opacity: 0.95; }
+    .quiz-meta { display:flex; gap:12px; margin: 14px 0; font-size: 13px; }
+    .quiz-meta span { background: rgba(255,255,255,0.18); padding: 4px 10px; border-radius: 20px; }
+    .quiz-card.weekly .quiz-meta span { background: rgba(0,0,0,0.08); }
+    .quiz-btn {
+      display: inline-block;
+      background: #fff; color: #0d6e4f;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-weight: 600; font-size: 14px;
+      border: none; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .quiz-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
+    .quiz-card.weekly .quiz-btn { color: #a06b00; }
+
+    /* Resources */
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .resource {
+      background: #fff;
+      border: 1px solid #e8efec;
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .resource:hover {
+      transform: translateY(-3px);
+      border-color: #0d6e4f;
+      box-shadow: 0 8px 18px rgba(13,110,79,0.10);
+    }
+    .resource .ico {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0d6e4f, #14906a);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .resource h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .resource p { font-size: 12px; color: #5a6b66; }
+
+    /* Progress bar */
+    .progress-bar {
+      width: 80px; height: 6px;
+      background: #e8efec;
+      border-radius: 3px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .progress-bar span {
+      display: block; height: 100%;
+      background: linear-gradient(90deg, #0d6e4f, #14906a);
+      border-radius: 3px;
+    }
+
+    /* Footer */
+
+    @media (max-width: 960px) {
+      
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .resource-list { grid-template-columns: repeat(2, 1fr); }
+      .lessons-grid, .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .quiz-grid { grid-template-columns: 1fr; }
+      
+    }
+    @media (max-width: 768px) {
+
+      .resource-list { grid-template-columns: 1fr; }
+      .lessons-grid, .video-grid { grid-template-columns: 1fr; }
+      
+      table { font-size: 13px; }
+    }
+
+    /* Mobile responsiveness fix — no horizontal scroll, fits viewport */
+    
+    img, table { max-width: 100%; }
+    @media (max-width: 600px) {
+      
+      .card { padding: 22px 18px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      th, td { padding: 10px 6px; font-size: 13px; }
+      .stat-tile { padding: 18px 14px; }
+      .stat-tile .num { font-size: 26px; }
+      .card-head { flex-wrap: wrap; gap: 6px; }
+      .welcome-strip { padding: 40px 0 50px; }
+      .stats-row { gap: 12px; }
+      .next-session { padding: 16px; gap: 14px; }
+      .next-session .date-block { width: 56px; }
+      .next-session .date-block .day { font-size: 22px; }
+      .next-session .info h4 { font-size: 14px; }
+      .progress-bar { width: 50px; }
+      .stars { font-size: 12px; }
+    }
+
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pageFadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }

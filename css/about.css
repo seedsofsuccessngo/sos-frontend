@@ -1,0 +1,226 @@
+/* ============================================================
+   Seeds of Success — about.css
+   Page-specific styles only
+   ============================================================ */
+
+/* Quick links bar */
+.quick-links {
+  background: #f5f9f7;
+  border-bottom: 1px solid #e8efec;
+  position: sticky;
+  top: 70px;
+  z-index: 999;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.quick-links::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-links ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  list-style: none;
+  padding: 18px 24px;
+  min-width: max-content;
+}
+
+.quick-links a {
+  font-weight: 500;
+  color: #5a6b66;
+  transition: color 0.2s;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.quick-links a:hover {
+  color: #0d6e4f;
+}
+
+/* Story spacing */
+#story {
+  padding-top: 40px !important;
+  margin-top: 0 !important;
+}
+
+/* Grid sections */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.section-grid.reverse {
+  direction: rtl;
+}
+
+.section-grid.reverse > * {
+  direction: ltr;
+}
+
+.section-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #0d6e4f;
+  margin-bottom: 8px;
+}
+
+.section-content .lead {
+  width: 60px;
+  height: 4px;
+  background: #f5a623;
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.section-content p {
+  color: #3e4d49;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.section-content ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.section-content ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  color: #3e4d49;
+}
+
+.section-content ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  background: #0d6e4f;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.section-content ul li strong {
+  color: #0d6e4f;
+}
+
+/* Visual blocks */
+.section-visual {
+  position: relative;
+  border-radius: 20px;
+  min-height: 360px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(13, 110, 79, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+}
+
+.visual-story {
+  background: linear-gradient(135deg, #0d6e4f, #14906a);
+}
+
+.visual-approach {
+  background: linear-gradient(135deg, #f5a623, #f7b945);
+  color: #1f2d2a;
+}
+
+.visual-mission {
+  background: linear-gradient(135deg, #102a23, #0d6e4f);
+}
+
+.visual-impact {
+  background: linear-gradient(135deg, #f5a623, #0d6e4f);
+}
+
+.section-visual .quote {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.section-visual .quote::before {
+  content: "“";
+  display: block;
+  font-size: 70px;
+  line-height: 0.8;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+/* Mission */
+.mission-box {
+  background: #ffffff;
+  border-left: 6px solid #f5a623;
+  padding: 36px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(13, 110, 79, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-box p {
+  font-size: 18px;
+  color: #1f2d2a;
+  line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-grid.reverse {
+    direction: ltr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .quick-links {
+    position: static !important;
+    padding: 12px 0;
+  }
+
+  .quick-links ul {
+    display: flex;
+    flex-wrap: wrap;          /* <-- This is the important change */
+    justify-content: center;
+    gap: 12px 20px;
+    padding: 0 16px;
+    min-width: auto;
+  }
+
+  .quick-links a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  #story {
+    padding-top: 30px;
+  }
+
+  .mission-box {
+    padding: 28px 22px;
+  }
+}
