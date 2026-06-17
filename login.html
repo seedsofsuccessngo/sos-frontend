@@ -49,22 +49,22 @@
       </div>
 
       <div class="role-grid">
-        <div class="role-card" onclick="pickRole('admin')">
+        <div class="role-card" onclick="pickRole(event, 'admin')">
           <div class="role-icon admin">🛡️</div>
           <h3>Admin</h3>
           <p>Manage applications, tutors, students &amp; stories.</p>
         </div>
-        <div class="role-card" onclick="pickRole('tutor')">
+        <div class="role-card" onclick="pickRole(event, 'tutor')">
           <div class="role-icon tutor">📚</div>
           <h3>Tutor</h3>
           <p>View your students, log sessions &amp; track progress.</p>
         </div>
-        <div class="role-card" onclick="pickRole('volunteer')">
+        <div class="role-card" onclick="pickRole(event, 'volunteer')">
           <div class="role-icon volunteer">🤝</div>
           <h3>Volunteer</h3>
           <p>See your tasks, hours &amp; team announcements.</p>
         </div>
-        <div class="role-card" onclick="pickRole('student')">
+        <div class="role-card" onclick="pickRole(event, 'student')">
           <div class="role-icon student">🎓</div>
           <h3>Student</h3>
           <p>Meet your tutor, view sessions &amp; learning material.</p>
@@ -153,7 +153,7 @@ New here? <a href="signup.html" id="createAccountLink">Create an account</a>
     const LABELS = { admin: 'Admin', tutor: 'Tutor', volunteer: 'Volunteer', student: 'Student' };
     let currentRole = null;
 
-    function pickRole(role) {
+    function pickRole(event, role) {
       currentRole = role;
       document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
       event.currentTarget.classList.add('selected');
