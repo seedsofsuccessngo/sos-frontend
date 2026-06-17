@@ -82,3 +82,33 @@ window.addEventListener("pageshow", function () {
     document.body.classList.remove("is-leaving");
 
 });
+
+const loader = document.getElementById("pageLoader");
+
+document.querySelectorAll("a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (
+        href &&
+        !href.startsWith("#") &&
+        !href.startsWith("mailto") &&
+        !href.startsWith("tel") &&
+        !link.target
+    ) {
+
+        link.addEventListener("click", function(e) {
+
+            e.preventDefault();
+
+            loader.classList.add("show");
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 250);
+
+        });
+
+    }
+
+});
