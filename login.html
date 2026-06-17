@@ -189,6 +189,10 @@ New here? <a href="signup.html" id="createAccountLink">Create an account</a>
       document.body.classList.add('is-leaving');
       setTimeout(() => { window.location.href = target; }, 250);
     }
+
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) document.body.classList.remove('is-leaving');
+    });
   </script>
 </body>
 </html>
