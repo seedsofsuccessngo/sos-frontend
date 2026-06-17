@@ -248,6 +248,16 @@ function closeCustomAlert() {
   document.getElementById("customAlert").classList.remove("show");
 }
 
+const params = new URLSearchParams(window.location.search);
+const selectedRole = params.get("role");
+
+if (selectedRole) {
+  const roleDropdown = document.getElementById("vrole");
+  if (roleDropdown) {
+    roleDropdown.value = selectedRole;
+  }
+}
+
 </script>
 
 <script src="js/common.js"></script>

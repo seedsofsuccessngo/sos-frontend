@@ -404,3 +404,23 @@
       from { opacity: 1; transform: translateY(0); }
       to   { opacity: 0; transform: translateY(-6px); }
     }
+
+
+    .role-form-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 26px;
+  background: #0d6e4f;
+  color: #ffffff;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.role-form-btn:hover {
+  background: #0a5239;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
