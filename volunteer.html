@@ -222,10 +222,15 @@ async function submitVolunteer(event) {
 
     } else {
 
-      alert("Failed to submit application");
-      console.error(result);
+  const message =
+    result.error ||
+    result.message ||
+    "Failed to submit application. Please try again.";
 
-    }
+  alert(message);
+  console.error(result);
+
+}
 
   } catch (error) {
 
