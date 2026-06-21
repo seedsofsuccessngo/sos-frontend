@@ -29,6 +29,16 @@ function normalizeStatus(status) {
   return value;
 }
 
+function isValidPhone(phone) {
+  return !phone || /^\d{10,15}$/.test(String(phone).trim());
+}
+
+function validateMessage(message) {
+  const length = String(message || "").trim().length;
+  if (length < 10) throw new Error("Message must be at least 10 characters.");
+  if (length > 1000) throw new Error("Message must be 1000 characters or fewer.");
+}
+
 function mapStudent(row) {
   const topics = row.topic_names ? row.topic_names.split("||").filter(Boolean) : [];
   const topicScores = row.topic_scores ? row.topic_scores.split("||").map(Number).filter(Number.isFinite) : [];
@@ -164,6 +174,12 @@ export default {
       if (url.pathname === "/api/application" && request.method === "POST") {
   const data = await request.json();
 
+  if (!isValidPhone(data.phone)) {
+    return json({ success: false, error: "Phone number must contain only numbers." }, corsHeaders, 400);
+  }
+
+  validateMessage(data.message);
+
   const existingVolunteer = await db.prepare(`
     SELECT id FROM volunteer_applications
     WHERE email = ?
@@ -206,6 +222,10 @@ export default {
 
       if (url.pathname === "/api/tutor-signup" && request.method === "POST") {
         const data = await request.json();
+
+        if (!isValidPhone(data.phone)) {
+          return json({ success: false, error: "Phone number must contain only numbers." }, corsHeaders, 400);
+        }
 
         await db.prepare(`
           INSERT INTO user_accounts (
@@ -412,6 +432,10 @@ export default {
       corsHeaders,
       409
     );
+  }
+
+  if (message.includes("Message must")) {
+    return json({ success: false, error: message }, corsHeaders, 400);
   }
 
   return json(

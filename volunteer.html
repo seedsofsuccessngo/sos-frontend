@@ -70,7 +70,7 @@
           <div class="vol-row">
             <div class="vol-group">
               <label for="vphone">Phone</label>
-              <input type="tel" id="vphone" placeholder="+1 555 123 4567" />
+              <input type="tel" id="vphone" placeholder="9123456780" inputmode="numeric" pattern="[0-9]{10,15}" />
             </div>
             <div class="vol-group">
               <label for="vrole">Role of Interest</label>
@@ -99,7 +99,7 @@
           </div>
           <div class="vol-group">
             <label for="vmsg">Why do you want to volunteer?</label>
-            <textarea id="vmsg" placeholder="Tell us a little about yourself..." required></textarea>
+            <textarea id="vmsg" placeholder="Tell us a little about yourself..." minlength="10" maxlength="1000" required></textarea>
           </div>
 
           <div class="form-buttons">
@@ -194,6 +194,23 @@ async function submitVolunteer(event) {
     message: document.getElementById("vmsg").value,
     password: document.getElementById("vpassword").value
   };
+
+  const phone = data.phone.trim();
+  if (phone && !/^\d{10,15}$/.test(phone)) {
+    showCustomAlert("Phone number must contain only numbers.");
+    return;
+  }
+
+  const messageLength = data.message.trim().length;
+  if (messageLength < 10) {
+    showCustomAlert("Message must be at least 10 characters.");
+    return;
+  }
+
+  if (messageLength > 1000) {
+    showCustomAlert("Message must be 1000 characters or fewer.");
+    return;
+  }
 
   if (data.password !== document.getElementById("vconfirm").value) {
     showCustomAlert("Passwords do not match");

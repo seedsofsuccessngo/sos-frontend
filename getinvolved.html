@@ -49,7 +49,7 @@
     <div class="container">
       <div class="intro">
         <h2>Be Part of the Journey</h2>
-        <p>Our goal for <strong>2025</strong> is to expand to teach as many kids as possible from rural Tamil Nadu.</p>
+        <p>Our goal for <strong>2026</strong> is to expand to teach as many kids as possible from rural Tamil Nadu.</p>
         <p>It takes many hearts and helping hands to run a program like this — tutors, coordinators, technology helpers, curriculum developers, and supporters. Whether you are a student looking to volunteer, a parent who wants to get involved, or a well-wisher who wants to support with resources, you are welcome to be part of this journey.</p>
         <div class="highlight">
           By partnering with us, you are not just helping teach English. You are <strong>connecting cultures, preserving roots, and empowering futures.</strong>
@@ -348,8 +348,27 @@ document.addEventListener("click",function(e){
     function donate(mode) {
       if (mode === 'custom') {
         const v = prompt('Enter the amount you would like to donate (₹):', '500');
-        if (!v || isNaN(v) || Number(v) <= 0) return;
-        selectedAmount = Number(v);
+        if (v === null) return;
+
+        const cleaned = v.trim();
+        if (!cleaned) {
+          alert('Please enter a donation amount before continuing.');
+          return;
+        }
+
+        if (!/^\d+(\.\d{1,2})?$/.test(cleaned)) {
+          alert('Please enter numbers only for the donation amount.');
+          return;
+        }
+
+        const amount = Number(cleaned);
+        if (amount <= 0) {
+          alert('Please enter a donation amount greater than 0.');
+          return;
+        }
+
+        selectedAmount = amount;
+        document.getElementById('donateAmount').textContent = 'â‚¹' + selectedAmount.toLocaleString('en-IN');
       }
       alert('Thank you for your generosity! In the live site this would open a secure payment popup for ₹' + selectedAmount.toLocaleString('en-IN') + '.');
     }
