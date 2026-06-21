@@ -30,7 +30,7 @@ function normalizeStatus(status) {
 }
 
 function isValidPhone(phone) {
-  return !phone || /^\d{10,15}$/.test(String(phone).trim());
+    return !phone || /^\+[1-9]\d{7,14}$/.test(String(phone).trim());
 }
 
 function validateMessage(message) {
