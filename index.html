@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/jpeg" href="Images/SeedsOfSuccess_pic.jpeg" />
   <title>Home | Seeds of Success</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/index.css" />
+
   <link rel="stylesheet" href="css/common.css" />
-  
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
 
-  <!-- ============== HEADER ============== -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand">
@@ -24,7 +24,9 @@
       </a>
 
       <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <ul class="nav-links" id="navLinks">
@@ -39,48 +41,37 @@
     </div>
   </header>
 
-  <!-- ============== HERO ============== -->
   <section class="hero">
-    <div class="container hero-inner">
-      <h1>Seeds of Success</h1>
-      <p class="tagline">Breaking Barriers, Creating Possibilities</p>
-      <div class="hero-buttons">
-        <a href="getinvolved.html" class="btn btn-primary">Get Involved</a>
-        <a href="about.html" class="btn btn-outline">Learn More</a>
+  <div class="container hero-inner">
+
+    <div class="hero-left">
+      <h1>Breaking Barriers,<br>Creating Possibilities</h1>
+    </div>
+
+    <div class="hero-right">
+      <div class="video-box">
+        <iframe
+          src="https://player.cloudinary.com/embed/?cloud_name=didxermmf&public_id=SeedsofSuccess_x6zfzx"
+          width="100%"
+          height="320"
+          style="border:0;"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
-  </section>
 
-  <!-- ============== MISSION STRIP ============== -->
+  </div>
+</section>
+
   <section class="mission-strip">
     <div class="container">
       <p>"Bridging language barriers to foster global connection and empower every child with limitless possibilities."</p>
     </div>
   </section>
 
-  <!-- ============== INTRO VIDEO ============== -->
-  <section class="section section-soft" aria-labelledby="intro-video-title">
-    <div class="container">
-      <div class="section-title">
-        <h2 id="intro-video-title">Introduction Video</h2>
-        <p>Learn more about Seeds of Success and how the tutoring journey works.</p>
-      </div>
+  
 
-     
-      <div style="position: relative; width: 100%; max-width: 420px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-        <iframe
-          src="https://player.cloudinary.com/embed/?cloud_name=didxermmf&public_id=SeedsofSuccess_x6zfzx"
-          width="100%"
-          height="240"
-          style="border: 0;"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen>
-        </iframe>
-      </div>
-
-     
-  </section>
-
-  <!-- ============== FEATURE CARDS ============== -->
   <section class="section section-soft">
     <div class="container">
       <div class="section-title">
@@ -90,56 +81,29 @@
 
       <div class="feature-grid">
 
-        <div class="feature-card">
+        <a href="about.html" class="feature-card feature-card-link">
           <div class="feature-icon">📖</div>
           <h3>About</h3>
           <p>Our story, approach, mission and the impact we are creating one child at a time.</p>
-          <a href="about.html" class="feature-link">Read More →</a>
-        </div>
+        </a>
 
-        <div class="feature-card">
+        <a href="ourteam.html" class="feature-card feature-card-link">
           <div class="feature-icon">👥</div>
           <h3>Our Team</h3>
-          <p>Meet the founders, tutors and students who make this mission possible every day.</p>
-          <a href="ourteam.html" class="feature-link">Meet The Team →</a>
-        </div>
+          <p>Meet the team members who make this mission possible every day.</p>
+        </a>
 
-        <div class="feature-card">
+        <a href="getinvolved.html" class="feature-card feature-card-link">
           <div class="feature-icon">🤝</div>
           <h3>Get Involved</h3>
           <p>Volunteer your time, mentor a child, or partner with us to create lasting change.</p>
-          <a href="getinvolved.html" class="feature-link">Join Us →</a>
-        </div>
+
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- ============== STATS ============== -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div>
-          <div class="stat-num">7+</div>
-          <div class="stat-label">Students Tutored</div>
-        </div>
-        <div>
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Active Tutors</div>
-        </div>
-        <div>
-          <div class="stat-num">3</div>
-          <div class="stat-label">Countries</div>
-        </div>
-        <div>
-          <div class="stat-num">1:1</div>
-          <div class="stat-label">Tutoring Model</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== CALL TO ACTION ============== -->
   <section class="cta-band">
     <div class="container">
       <h2>Become a part of the change</h2>
@@ -148,7 +112,6 @@
     </div>
   </section>
 
-  <!-- ============== FOOTER ============== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -156,6 +119,7 @@
           <h4>Seeds of Success</h4>
           <p>A youth-led, registered nonprofit in Virginia, USA — connecting Tamil-origin tutors abroad with rural children in Tamil Nadu through meaningful 1-on-1 English tutoring partnerships.</p>
         </div>
+
         <div>
           <h4>Quick Links</h4>
           <ul>
@@ -165,29 +129,29 @@
             <li><a href="ourstudents.html">Our Students</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Get In Touch</h4>
           <ul>
             <li><a href="getinvolved.html">Get Involved</a></li>
             <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="mailto:contact@soslearn.org">contact@soslearn.org</a></li>
+            <a href="contact.html" class="footer-contact-btn">Contact Us</a>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         © 2026 Seeds of Success. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Hamburger toggle script -->
   <script src="js/common.js"></script>
 
-   
-<div class="page-loader" id="pageLoader">
-    <img src="Images/SeedsOfSuccess_pic.jpeg" alt="">
+  <div class="page-loader" id="pageLoader">
+    <img src="Images/SeedsOfSuccess_pic.jpeg" alt="Seeds of Success logo">
     <div class="loader-spinner"></div>
-</div>
+  </div>
 
 </body>
 </html>

@@ -1,0 +1,160 @@
+/* ============================================================
+   Seeds of Success — contact.css
+   Page-specific styles only. Shared styles are in common.css.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+   Contact Page
+--------------------------------------------------------- */
+
+/* Contact Layout */
+
+.contact-layout{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:60px;
+    align-items:start;
+}
+
+/* Left Side */
+
+.contact-info-box h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(30px,4vw,42px);
+    color:#0d6e4f;
+    margin-bottom:10px;
+}
+
+.contact-info-box p{
+    color:#566862;
+    line-height:1.9;
+    font-size:16px;
+    text-align:justify;
+}
+
+.contact-note{
+    margin-top:30px;
+    padding:20px 24px;
+    background:#f5f9f7;
+    border-left:5px solid #f5a623;
+    border-radius:14px;
+    color:#445550;
+    line-height:1.7;
+    box-shadow:0 4px 12px rgba(13,110,79,.08);
+}
+
+/* Contact Form */
+
+.contact-form-card{
+    background:#ffffff;
+    padding:38px;
+    border-radius:22px;
+    border:1px solid #e6efeb;
+    box-shadow:0 10px 35px rgba(13,110,79,.08);
+    transition:.35s ease;
+}
+
+.contact-form-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(13,110,79,.15);
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#0d6e4f;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px 18px;
+    border:1px solid #d9e4df;
+    border-radius:14px;
+    font-size:15px;
+    font-family:"Poppins",sans-serif;
+    transition:.25s;
+    resize:vertical;
+    background:#ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:#14906a;
+    box-shadow:0 0 0 4px rgba(20,144,106,.12);
+}
+
+.form-group textarea{
+    min-height:170px;
+}
+
+/* Submit Button */
+
+.contact-form-card .btn{
+    width:100%;
+    margin-top:10px;
+}
+
+/* Animation */
+
+.contact-info-box,
+.contact-form-card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:960px){
+
+    .contact-layout{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .contact-form-card{
+        padding:26px;
+    }
+
+    .contact-info-box h2{
+        text-align:center;
+    }
+
+    .contact-info-box p{
+        text-align:left;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .contact-form-card{
+        padding:22px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+        padding:13px 15px;
+    }
+
+}

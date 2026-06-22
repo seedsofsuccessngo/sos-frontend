@@ -22,14 +22,6 @@
     .iti input {
       width: 100%;
     }
-
-    .iti__search-input {
-  width: 100%;
-  padding: 12px;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-    }
-    
   </style>
 </head>
 
@@ -97,6 +89,7 @@
                 id="vphone"
                 placeholder="Phone number"
                 autocomplete="tel"
+                required
               />
             </div>
             <div class="vol-group">
@@ -201,7 +194,7 @@
           <ul>
             <li><a href="getinvolved.html">Get Involved</a></li>
             <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="mailto:contact@soslearn.org">contact@soslearn.org</a></li>
+            <a href="contact.html" class="footer-contact-btn">Contact Us</a>
           </ul>
         </div>
       </div>
@@ -211,7 +204,7 @@
     </div>
   </footer>
 
-  <<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.1/build/js/intlTelInput.min.js"></script>>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.5/build/js/intlTelInput.min.js"></script>
 
   <script>
     const volunteerPhoneInput = document.querySelector("#vphone");

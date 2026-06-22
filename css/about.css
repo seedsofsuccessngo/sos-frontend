@@ -224,3 +224,11 @@
     padding: 28px 22px;
   }
 }
+
+.section-content p,
+.mission-box p {
+    text-indent: 2em;      /* First-line indent */
+    text-align: justify;   /* Professional alignment */
+    line-height: 1.9;
+    margin-bottom: 18px;
+}

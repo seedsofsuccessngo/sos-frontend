@@ -47,18 +47,17 @@
   <!-- ============== FOUNDERS ============== -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
+      <!-- <div class="section-title">
         <h2>Our Founders</h2>
         <p>The visionaries who started this journey to empower rural Tamil Nadu children.</p>
-      </div>
+      </div> -->
 
       <div class="team-grid">
 
         <div class="team-card" data-member="mithra">
           <div class="avatar"><img src="Images/Mithra_Pic.avif" alt="Mithra Venkatesan"></div>
           <h3>Mithra Venkatesan</h3>
-          <span class="role">Founder & Program Coordinator & Tutor</span>
-          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+          <span class="role">Founder, Program Coordinator, Tutor</span>
 
           <div class="member-details" style="display:none;">
             <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
@@ -74,8 +73,7 @@
         <div class="team-card" data-member="nila">
           <div class="avatar alt-1"><img src="Images/Nila_pic.avif" alt="Nila Loganathan"></div>
           <h3>Nila Loganathan</h3>
-          <span class="role">Founder & Program Coordinator & Tutor</span>
-          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+          <span class="role">Founder, Program Coordinator, Tutor</span>
 
           <div class="member-details" style="display:none;">
             <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
@@ -92,8 +90,7 @@
         <div class="team-card" data-member="kavin">
           <div class="avatar alt-2"><img src="Images/Kavin_Pic.avif" alt="Kavin Loganathan"></div>
           <h3>Kavin Loganathan</h3>
-          <span class="role">Founder & Technology Innovator</span>
-          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
+          <span class="role">Founder, Technology Innovator</span>
 
           <div class="member-details" style="display:none;">
             <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
@@ -115,17 +112,17 @@
   <!-- ============== CURRICULUM TEAM ============== -->
   <section class="section section-soft">
     <div class="container">
-      <div class="section-title">
+      <!-- <div class="section-title">
         <h2>Curriculum Developers</h2>
         <p>Crafting lessons that build skills, confidence, and curiosity.</p>
-      </div>
+      </div> -->
 
       <div class="team-grid">
 
         <div class="team-card">
           <div class="avatar alt-3"><img src="Images/Prakash.avif" alt="Prakash Swaminathan"></div>
           <h3>Prakash Swaminathan</h3>
-          <span class="role">Curriculum Developer & Tutor</span>
+          <span class="role">Curriculum Developer, Tutor</span>
           <p class="location">Edmonton, Canada</p>
         </div>
 
@@ -140,7 +137,6 @@
           <div class="avatar"><img src="Images/Thara_Pic.avif" alt="Thara Venkatesan"></div>
           <h3>Thara Venkatesan</h3>
           <span class="role">Tutor</span>
-          <button type="button" class="btn btn-dark member-toggle" data-action="open">Know More</button>
 
           <div class="member-details" style="display:none;">
             <button type="button" class="member-close" aria-label="Close" title="Close">✕</button>
@@ -161,10 +157,10 @@
   <!-- ============== TUTORS ============== -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
+      <!-- <div class="section-title">
         <h2>Our Tutors</h2>
         <p>Dedicated volunteers giving their time, language and care to children across the world.</p>
-      </div>
+      </div> -->
 
       <div class="team-grid">
 
@@ -238,7 +234,7 @@
           <ul>
             <li><a href="getinvolved.html">Get Involved</a></li>
             <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="mailto:contact@soslearn.org">contact@soslearn.org</a></li>
+            <a href="contact.html" class="footer-contact-btn">Contact Us</a>
           </ul>
         </div>
       </div>
@@ -247,56 +243,66 @@
       </div>
     </div>
   </footer>
-
+<div class="team-popup" id="teamPopup">
+  <div class="team-popup-box">
+    <button class="team-popup-close" onclick="closeTeamPopup()">✕</button>
+    <div id="teamPopupContent"></div>
+  </div>
+</div>
   <script>
-   
+  const memberCards = document.querySelectorAll(".team-card[data-member]");
 
-    // Expand/collapse member descriptions (single-open at a time)
-    const memberCards = document.querySelectorAll('.team-card[data-member]');
+  const popup = document.getElementById("teamPopup");
+  const popupContent = document.getElementById("teamPopupContent");
 
-    function closeAllMembers() {
-      memberCards.forEach(card => {
-        card.classList.remove('member-open');
-        const details = card.querySelector('.member-details');
-        if (details) details.style.display = 'none';
-      });
+  memberCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const avatar = card.querySelector(".avatar").outerHTML;
+      const name = card.querySelector("h3").outerHTML;
+      const role = card.querySelector(".role").outerHTML;
+      const details = card.querySelector(".member-details");
+
+      if (!details) return;
+
+      popupContent.innerHTML = `
+        ${avatar}
+        ${name}
+        ${role}
+        <div class="popup-member-details">
+          ${details.innerHTML}
+        </div>
+      `;
+
+      popup.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeTeamPopup() {
+    popup.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      closeTeamPopup();
     }
+  });
 
-    memberCards.forEach(card => {
-      const toggleBtn = card.querySelector('.member-toggle');
-      const closeBtn = card.querySelector('.member-close');
-      const details = card.querySelector('.member-details');
-
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (!details) return;
-
-          const isOpen = details.style.display !== 'none';
-          closeAllMembers();
-          if (!isOpen) details.style.display = 'block';
-        });
-      }
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          closeAllMembers();
-        });
-      }
-    });
-
-    // Click outside closes
-    document.addEventListener('click', (e) => {
-      const inside = e.target && e.target.closest && e.target.closest('.team-card[data-member]');
-      if (!inside) closeAllMembers();
-    });
-  </script>
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeTeamPopup();
+    }
+  });
+</script>
 <script src="js/common.js"></script>
 
 <div class="page-loader" id="pageLoader">
     <img src="Images/SeedsOfSuccess_pic.jpeg" alt="">
     <div class="loader-spinner"></div>
 </div>
+
+
+
 </body>
 </html>
