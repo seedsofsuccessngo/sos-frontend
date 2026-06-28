@@ -95,8 +95,8 @@ button, input, select, textarea { font-family: inherit; }
   color: #0d6e4f;
 }
 .brand-mark {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: linear-gradient(135deg, #0d6e4f, #f5a623);
   display: flex;
