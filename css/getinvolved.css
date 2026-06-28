@@ -590,11 +590,11 @@
 
 .getinvolved-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.6fr;
-  grid-template-rows: auto auto;
-  gap: 30px 40px;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
   align-items: start;
 }
+
 
 .roles-side {
   display: contents;
@@ -616,6 +616,13 @@
   border-radius: 15px;
 }
 
+.journey-side {
+  min-width: 320px;
+}
+.roles-side {
+  min-width: 0;
+}
+
 .journey-card {
   margin-top: 0 !important;
 }
@@ -624,9 +631,11 @@
   grid-column: 2;
   grid-row: 2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: 22px;
 }
+
+
 
 @media (max-width: 992px) {
   .getinvolved-layout {
