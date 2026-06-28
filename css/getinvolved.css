@@ -31,9 +31,9 @@
       margin-bottom: 14px;
     }
     .ways{
-      color:#0d6e4f;
-      font-size: 30px;
+      text-align: center;
     }
+    
     .intro p { margin-bottom: 16px; }
     .intro .highlight {
       background: #fff8eb;
@@ -589,114 +589,64 @@
 }
 
 .getinvolved-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.6fr;
-    gap: 40px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  grid-template-rows: auto auto;
+  gap: 30px 40px;
+  align-items: start;
 }
 
 .roles-side {
-  min-width: 0;
-}
-
-.journey-side {
-  position: sticky;
-  top: 95px;
-}
-
-.journey-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 34px 30px;
-  box-shadow: 0 8px 28px rgba(13, 110, 79, 0.10);
-  border: 1px solid #e8efec;
+  display: contents;
 }
 
 .compact-title {
-  text-align: left;
-  margin-bottom: 28px;
-}
-
-.compact-title h2 {
-  font-size: clamp(26px, 3vw, 34px);
-}
-
-.compact-title p {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
   margin: 0;
 }
 
+.journey-side {
+  grid-column: 1;
+  grid-row: 2;
+  position: sticky;
+  top: 110px;
+}
+
+.journey-card {
+  margin-top: 0 !important;
+}
+
 .compact-roles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.compact-roles-grid .role-card {
-  padding: 26px 22px;
-}
-
-.compact-roles-grid .role-icon {
-  width: 58px;
-  height: 58px;
-  font-size: 26px;
-  margin-bottom: 14px;
-}
-
-.compact-roles-grid .role-card h3 {
-  font-size: 20px;
-}
-
-.compact-roles-grid .role-card > p {
-  font-size: 14px;
-}
-
-/* Tablet */
 @media (max-width: 992px) {
   .getinvolved-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.6fr;
-    gap: 40px;
-    align-items: start;
-}
+    display: block;
+  }
+
+  .roles-side {
+    display: block;
+  }
 
   .journey-side {
     position: static;
-    order: -1;
+    margin-bottom: 30px;
   }
 
-  .compact-title {
-    text-align: center;
-  }
-
-  .compact-title p {
-    margin: 0 auto;
+  .compact-roles-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .compact-roles-grid {
     grid-template-columns: 1fr;
   }
-
-  .journey-card {
-    padding: 28px 22px;
-  }
-}
-
-.compact-title{
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.compact-title h2{
-    margin-top: 0;
-}
-
-.journey-side{
-    align-self: start;
-}
-
-.journey-card{
-    margin-top: 65px;   /* Adjust between 55px–70px until perfectly aligned */
 }
