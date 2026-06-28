@@ -233,14 +233,15 @@ async function handleSignup(e) {
         const result = await response.json();
 
         if (result.success) {
-          document.getElementById("formCard").style.display = "none";
-          document.getElementById("successCard").classList.add("show");
+  document.getElementById("formCard").style.display = "none";
+  const successCard = document.getElementById("successCard");
+  successCard.style.display = "block";
 
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        } else {
+  successCard.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+} else {
           showCustomAlert(result.error || result.message || "Failed to create account");
         }
 
